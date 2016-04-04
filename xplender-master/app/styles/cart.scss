@@ -1,0 +1,146 @@
+@import 'compass';
+@import 'component';
+
+#main {
+	min-height: 500px;
+}
+.cart_module {
+	@include box-shadow(1px 1px 1px #ddd);
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	margin: 30px 0 60px 0;
+	overflow: hidden;
+}
+.cart_head {
+	.cart_title {
+		@include clearfix;
+		background: #f5f5f5;
+		li {
+			float: left;
+			display: inline;
+			color: #666;
+			font-size: 16px;
+			height: 48px;
+			line-height: 48px;
+		}
+		.name {
+			width: 600px;
+			text-indent: 30px;
+		}
+		.price {
+			width: 200px;
+		}
+		.number {
+			width: 200px;
+		}
+	}
+}
+
+.cart_list {
+	.cart_item {
+		@include clearfix;
+		padding: 25px 0 15px 0;
+		border-bottom: 1px solid #ddd;
+		.cart_pro_item {
+			float: left;
+			display: inline;
+			color: #666;
+			font-size: 16px;
+			height: 80px;
+		}
+		.product_name {
+			width: 540px;
+			margin-left: 50px;
+			.pro_thumb {
+				float: left;
+				display: inline;
+				img {
+					width: 80px;
+					height: 80px;
+				}
+			}
+			.pro_name {
+				float: left;
+				display: inline;
+				line-height: 80px;
+				a {
+					color: #333;
+					font-size: 16px;
+				}
+			}
+		}
+		.product_price {
+			width: 200px;
+			line-height: 80px;
+		}
+		.product_number {
+			width: 200px;
+			margin-top: 30px;
+			.num_count {
+				float: left;
+				display: inline;
+				color: #fff;
+				width: 20px;
+				height: 20px;
+				line-height: 20px;
+				text-align: center;
+				background: #dfdfdf;
+				border-radius: 3px;
+				cursor: pointer;
+			}
+			.num {
+				float: left;
+				display: inline;
+				border: 1px solid #ddd;
+				border-radius: 3px;
+				margin: 0 6px;
+				input {
+					color: #666;
+					font-size: 12px;
+					height: 18px;
+					line-height: 18px;
+					width: 40px;
+					text-align: center;
+					border: none;
+				}
+			}
+		}
+		.product_total {
+			line-height: 80px;
+		}
+	}
+}
+
+.cart_shop {
+	height: 80px;
+	line-height: 80px;
+	.next {
+		float: right;
+		display: inline;
+		margin-right: 30px;
+		.total {
+			color: #555;
+			font-size: 18px;
+			margin-right: 12px;
+			i {
+				font-style: normal;
+				margin-left: 10px;
+			}
+		}
+		.shopping {
+			color: #fff;
+			font-size: 18px;
+			height: 42px;
+			line-height: 42px;
+			width: 120px;
+			text-align: center;
+			background: $font_red;
+			border: none;
+			cursor: pointer;
+			&:hover {
+				@include opacity(0.8);
+			}
+		}
+	}
+}

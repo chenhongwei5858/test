@@ -1,0 +1,94 @@
+@import 'compass';
+@import 'component';
+
+#main {
+	background: #fff;
+}
+
+.location {
+	color: #333;
+	font-size: 14px;
+	height: 30px;
+	line-height: 30px;
+	margin-top: 30px;
+	border-bottom: 1px solid #ddd;
+	a {
+		color: #333;
+		margin: 0 6px;
+		&:hover {
+			color: $font_red;
+		}
+	}
+}
+
+.service_module {
+	@include clearfix;
+}
+.service_menu {
+	float: left;
+	display: inline;
+	width: 240px;
+	font-size: 14px;
+	dt {
+		height: 30px;
+		line-height: 30px;
+		margin-top: 12px;
+		a {
+			display: block;
+			color: #333;
+			font-weight: bold;
+		}
+	}
+	dd {
+		a {
+			display: block;
+			height: 30px;
+			line-height: 30px;
+			text-indent: 6px;
+			&:hover {
+				color: $font_red;
+			}
+			&.current {
+				color: $font_red;
+				font-weight: bold;
+			}
+		}
+	}
+}
+.service_content {
+	float: left;
+	display: inline;
+	width: 960px;
+	padding-bottom: 60px;
+}
+.service_list {
+	padding-top: 1px;
+	dt {
+		color: #333;
+		font-size: 16px;
+		font-weight: bold;
+		margin-top: 20px;
+	}
+	dd {
+		padding: 20px 0 10px 0;
+		p {
+			line-height: 24px;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

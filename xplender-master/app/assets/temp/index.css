@@ -1,0 +1,17 @@
+body {
+  background: #f60;
+}
+
+.header .menu {
+  overflow: hidden;
+}
+.header .menu li {
+  float: left;
+  display: inline;
+  *zoom: 1;
+}
+.header .menu li:after {
+  content: "";
+  display: table;
+  clear: both;
+}

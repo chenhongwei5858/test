@@ -1,0 +1,266 @@
+@charset "UTF-8";
+/* 清除内外边距 */
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote,
+dl, dt, dd, ul, ol, li,
+pre,
+fieldset, lengend, button, input, textarea,
+th, td, form, figure, header, footer, nav {
+  /* table elements 表格元素 */
+  margin: 0;
+  padding: 0; }
+
+/* 设置默认字体 */
+body,
+button, input, select, textarea {
+  /* for ie */
+  font: 12px/1.2 Tahoma, Helvetica, Arial, "微软雅黑" , "\5b8b\4f53", sans-serif;
+  /* 用 ascii 字符表示，使得在任何编码下都无问题 */
+  -webkit-font-smoothing: antialiased; }
+
+h1 {
+  font-size: 18px;
+  /* 18px / 12px = 1.5 */ }
+
+h2 {
+  font-size: 16px; }
+
+h3 {
+  font-size: 14px; }
+
+h4, h5, h6 {
+  font-size: 100%; }
+
+address, cite, dfn, em, var {
+  font-style: normal; }
+
+/* 将斜体扶正 */
+code, kbd, pre, samp, tt {
+  font-family: "Courier New", Courier, monospace; }
+
+/* 统一等宽字体 */
+small {
+  font-size: 12px; }
+
+/* 小于 12px 的中文很难阅读，让 small 正常化 */
+/* 重置列表元素 */
+ul, ol {
+  list-style: none; }
+
+/* 重置文本格式元素 */
+a {
+  color: #000;
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: none; }
+
+abbr[title], acronym[title] {
+  /* 注：1.ie6 不支持 abbr; 2.这里用了属性选择符，ie6 下无效果 */
+  border-bottom: 1px dotted;
+  cursor: help; }
+
+q:before, q:after {
+  content: ''; }
+
+/* 重置表单元素 */
+legend {
+  color: #000; }
+
+/* for ie6 */
+fieldset, img {
+  border: none; }
+
+/* img 搭车：让链接里的 img 无边框 */
+img {
+  vertical-align: center; }
+
+/* 注：optgroup 无法扶正 */
+button, input, select, textarea {
+  font-size: 100%;
+  /* 使得表单元素在 ie 下能继承字体大小 */
+  outline: none; }
+
+/* 重置表格元素 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* 重置 hr */
+hr {
+  border: none;
+  height: 1px; }
+
+/* 让非ie浏览器默认也显示垂直滚动条，防止因滚动条引起的闪烁 */
+html {
+  overflow-y: scroll; }
+
+img {
+  vertical-align: middle; }
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.w {
+  max-width: 1200px;
+  margin: 0 auto;
+  *zoom: 1; }
+
+.w:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.btn {
+  color: #fff;
+  font-size: 16px;
+  width: 280px;
+  height: 42px;
+  line-height: 42px;
+  text-align: center;
+  margin: 0 auto;
+  border: none;
+  border-radius: 6px;
+  background: #c00;
+  cursor: pointer; }
+
+.btn:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8; }
+
+#main {
+  padding-top: 1px;
+  background: #e6e6e6; }
+
+#header {
+  height: 50px;
+  width: 100%;
+  background: #000; }
+
+.header {
+  overflow: hidden;
+  *zoom: 1; }
+
+.header .logo {
+  float: left;
+  display: inline;
+  margin: 10px 0 0 18px; }
+
+.header .menu {
+  float: left;
+  display: inline;
+  margin-left: 30px; }
+
+.header .menu li {
+  float: left;
+  display: inline;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 20px; }
+
+.header .menu li a {
+  color: #ccc;
+  font-size: 14px; }
+
+.header .menu li a:hover {
+  color: #fff; }
+
+.header .menu li.current a {
+  color: #fff; }
+
+#footer {
+  height: 240px;
+  background: url("../images/footer.jpg") no-repeat;
+  background-size: cover; }
+
+.footer_info {
+  overflow: hidden;
+  *zoom: 1; }
+
+.footer_info .sign_email {
+  float: left;
+  display: inline;
+  margin-top: 40px; }
+
+.footer_info .sign_email h3 {
+  color: #fff;
+  font-size: 18px;
+  font-weight: normal; }
+
+.footer_info .sign_email .sign_box {
+  overflow: hidden;
+  *zoom: 1;
+  margin-top: 12px; }
+
+.footer_info .sign_email .sign_box .e_input {
+  float: left;
+  display: inline;
+  color: #333;
+  width: 280px;
+  height: 32px;
+  line-height: 32px;
+  text-indent: 5px;
+  background: #fff;
+  border: none; }
+
+.footer_info .sign_email .sign_box .e_btn {
+  float: left;
+  display: inline;
+  color: #fff;
+  width: 80px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  background: #000;
+  border: none;
+  cursor: pointer; }
+
+.footer_info .ft_logo {
+  float: right;
+  display: inline;
+  margin: 60px 60px 0 0; }
+
+.footer_info .ft_logo img {
+  width: 140px; }
+
+.footer_info .service_list {
+  float: left;
+  display: inline;
+  margin: 20px 0 0 100px; }
+
+.footer_info .service_list li {
+  float: left;
+  display: inline;
+  width: 200px; }
+
+.footer_info .service_list li h3 {
+  color: #fff;
+  height: 32px;
+  line-height: 32px; }
+
+.footer_info .service_list li a {
+  display: block;
+  color: #fff;
+  height: 24px;
+  line-height: 24px; }
+
+.footer_info .service_list li a:hover {
+  color: #ddd; }
+
+.footer .payment {
+  text-align: center;
+  margin-top: 30px; }
+
+.footer .payment .payment_icon {
+  margin-right: 12px; }
+
+.footer .payment img {
+  height: 28px; }
+
+.footer .copyright {
+  color: #fff;
+  font-size: 14px;
+  font-family: 'arial';
+  text-align: center;
+  margin-top: 20px; }

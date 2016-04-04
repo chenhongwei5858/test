@@ -1,0 +1,205 @@
+@import 'compass';
+@import 'component';
+@import 'icons/*.png';
+
+#header {
+	position: fixed;
+	z-index: 999;
+	background: rgba(0, 0, 0, 0.35);
+}
+
+.about_banner {
+	position: relative;
+	height: 600px;
+	text-align: center;
+	background: url('../images/banner_about.jpg') no-repeat;
+	background-size: cover;
+	.b_logo {
+		margin-top: 160px;
+	}
+	.b_des {
+		color: #fff;
+		font-size: 12px;
+		width: 80%;
+		line-height: 20px;
+		margin: 50px auto 0 auto;
+	}
+	.follow_us {
+		text-align: center;
+		margin-top: 70px;
+		a {
+			@include inline-block;
+			width: 85px;
+			height: 85px;
+			margin: 0 40px;
+			&.twitter {
+				@include icons-sprite('twitter');
+			}
+			&.facebook {
+				@include icons-sprite('facebook');
+			}
+			&.youtube {
+				@include icons-sprite('youtube');
+			}
+		}
+	}
+}
+
+.contact_module {
+	padding: 60px 0 80px 0;
+}
+.con_header {
+	.con_title {
+		height: 50px;
+		line-height: 50px;
+		width: 240px;
+		text-align: center;
+		margin: 0 auto;
+		border-top: 1px solid #22d9e9;
+		border-bottom: 1px solid #22d9e9;
+		h3 {
+			color: #000;
+			font-size: 30px;
+			font-weight: normal;
+		}
+	}
+	.con_des {
+		color: #555;
+		font-size: 12px;
+		line-height: 20px;
+		width: 80%;
+		text-align: center;
+		margin: 30px auto 0 auto;
+	}
+}
+
+.con_main {
+	width: 80%;
+	margin-top: 80px;
+	@include clearfix;
+}
+.con_pattern {
+	float: left;
+	display: inline;
+	width: 50%;
+	.pattern_header {
+		color: #444;
+		font-size: 18px;
+		font-weight: normal;
+		padding-left: 40px;
+	}
+	.pattern_list {
+		li {
+			height: 36px;
+			line-height: 36px;
+			margin: 20px 0;
+			.icon {
+				position: relative;
+				float: left;
+				display: inline;
+			}
+			.website {
+				top: 5px;
+				width: icons-sprite-width('website');
+				height: icons-sprite-height('website');
+				@include icons-sprite('website');
+			}
+			.phone {
+				top: 5px;
+				width: icons-sprite-width('phone');
+				height: icons-sprite-height('phone');
+				@include icons-sprite('phone');
+			}
+			.email {
+				top: 8px;
+				width: icons-sprite-width('email');
+				height: icons-sprite-height('email');
+				@include icons-sprite('email');
+			}
+			p {
+				color: #9e9e9e;
+				font-size: 18px;
+				margin-left: 40px;
+				a {
+					color: #9e9e9e;
+					&:hover {
+						color: #333;
+					}
+				}
+			}
+		}
+	}
+}
+
+.send_mes {
+	float: right;
+	display: inline;
+	width: 400px;
+	.send_header {
+		color: #444;
+		font-size: 18px;
+		font-weight: normal;
+	}
+	.send_list {
+		margin-top: 20px;
+		li {
+			position: relative;
+			margin: 8px 0;
+			input {
+				width: 400px;
+				height: 32px;
+				line-height: 32px;
+				padding: 8px 0;
+				text-indent: 10px;
+				border: 1px solid #ccc;
+				&:focus {
+					border-color: #33c5f5;
+				}
+			}
+			textarea {
+				width: 400px;
+				height: 80px;
+				padding: 6px 0;
+				border: 1px solid #ccc;
+				text-indent: 10px;
+				resize: none;
+				&:focus {
+					border-color: #33c5f5;
+				}
+			}
+			label.error {
+				position: absolute;
+				top: 0;
+				right: 12px;
+				display: block;
+				height: 32px;
+				line-height: 32px;
+				color: $font_red;
+			}
+		}
+	}
+	.mes_btn {
+		margin-top: 20px;
+		.mes_input {
+			color: #fff;
+			font-size: 16px;
+			width: 84px;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+			border-radius: 3px;
+			border: none;
+			margin-right: 30px;
+			cursor: pointer;
+			&.mes_sub {
+				background: #24c5f6;
+			}
+			&.mes_cancel {
+				background: #dc306d;
+			}
+			&:hover {
+				@include opacity(0.8);
+			}
+		}
+	}
+}

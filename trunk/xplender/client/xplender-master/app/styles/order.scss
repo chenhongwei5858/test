@@ -1,0 +1,144 @@
+@import 'compass';
+@import 'component';
+
+#main {
+	background: #fff;
+}
+.order_info {
+	margin: 30px 0 60px 0;
+}
+.order_head {
+	padding-bottom: 18px;
+	.order_title {
+		color: #333;
+		font-size: 28px;
+		font-weight: normal;
+	}
+	p {
+		color: #333;
+		font-size: 13px;
+		margin-top: 18px;
+	}
+}
+
+
+.order_main {
+	@include clearfix;
+}
+.order_address {
+	float: left;
+	display: inline;
+	width: 850px;
+	padding: 20px 0;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	.title {
+		color: #333;
+		font-size: 20px;
+		margin-left: 20px;
+	}
+	.pay {
+		display: block;
+		width: 280px;
+		margin: 30px auto 0 auto;
+	}
+}
+.adr_list {
+	margin: 12px 0 0 20px;
+	.adr_item {
+		margin: 20px 0;
+		.item_title {
+			float: left;
+			display: inline;
+			color: #333;
+			font-size: 14px;
+			width: 160px;
+			height: 30px;
+			line-height: 30px;
+			text-align: right;
+			margin-right: 12px;
+		}
+		.adr_input {
+			width: 300px;
+			height: 30px;
+			line-height: 30px;
+			text-indent: 5px;
+		}
+		label.error {
+			color: $font_red;
+			margin-left: 12px;
+		}
+	}
+}
+.order_summary {
+	float: right;
+	display: inline;
+	width: 320px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	.order_sum {
+		padding: 20px 12px;
+		.pay {
+			display: block;
+			width: 280px;
+			&:hover {
+				@include opacity(0.8);
+			}
+		}
+		.sum_list {
+			width: 280px;
+			padding-bottom: 6px;
+			margin: 12px auto 0 auto;
+			li {
+				color: #333;
+				height: 28px;
+				line-height: 28px;
+				.cost {
+					float: right;
+					display: inline;
+				}
+				&.order_total {
+					color: $font_red;
+					font-size: 18px;
+					font-weight: bold;
+					margin-top: 12px;
+					padding-top: 12px;
+					border-top: 1px solid #eee;
+				}
+				.paypal {
+					display: block;
+					height: 40px;
+					line-height: 40px;
+					margin: 20px 0 0 10px;
+					input {
+						margin-right: 12px;
+					}
+					img {
+						height: 40px;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

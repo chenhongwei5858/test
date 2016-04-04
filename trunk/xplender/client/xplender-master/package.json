@@ -1,0 +1,25 @@
+{
+  "name": "xplander",
+  "version": "1.0.0",
+  "description": "Cross-border e-commerce",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.11.1",
+    "gulp-compass": "^2.1.0",
+    "gulp-load-plugins": "^1.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.2.0",
+    "gulp-uglify": "^1.5.3",
+    "gulp-watch": "^4.3.5",
+    "seajs": "^3.0.2"
+  },
+  "scripts": {
+    "test": "gulp"
+  },
+  "keywords": [
+    "xplander"
+  ],
+  "author": "Tracy",
+  "license": "ISC"
+}

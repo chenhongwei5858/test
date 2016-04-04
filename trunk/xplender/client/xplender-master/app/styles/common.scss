@@ -1,0 +1,176 @@
+@import 'compass';
+
+@import 'reset';
+
+
+* {
+	@include box-sizing('border-box');
+}
+
+.w {
+	max-width: 1200px;
+	margin: 0 auto;
+	@include pie-clearfix;
+}
+.btn {
+	color: #fff;
+	font-size: 16px;
+	width: 280px;
+	height: 42px;
+	line-height: 42px;
+	text-align: center;
+	margin: 0 auto;
+	border: none;
+	border-radius: 6px;
+	background: #c00;
+	cursor: pointer;
+	&:hover {
+		@include opacity(0.8);
+	}
+}
+
+#main {
+	padding-top: 1px;
+	background: #e6e6e6;
+}
+
+#header {
+	height: 50px;
+	width: 100%;
+	background: #000;
+}
+
+.header {
+	@include clearfix;
+	.logo {
+		float: left;
+		display: inline;
+		margin: 10px 0 0 18px;	
+	}
+	.menu {
+		float: left;
+		display: inline;
+		margin-left: 30px;
+		li {
+			float: left;
+			display: inline;
+			height: 50px;
+			line-height: 50px;
+			padding: 0 20px;
+			a {
+				color: #ccc;
+				font-size: 14px;
+				&:hover {
+					color: #fff;
+				}
+			}
+			&.current {
+				a {
+					color: #fff;
+				}
+			}
+		}
+	}
+}
+
+
+// footer
+#footer {
+	height: 240px;
+	background: url('../images/footer.jpg') no-repeat;
+	background-size: cover;
+}
+
+.footer_info {
+	@include clearfix;
+	.sign_email {
+		float: left;
+		display: inline;
+		margin-top: 40px;
+		h3 {
+			color: #fff;
+			font-size: 18px;
+			font-weight: normal;
+		}
+		.sign_box {
+			@include clearfix;
+			margin-top: 12px;
+			.e_input {
+				float: left;
+				display: inline;
+				color: #333;
+				width: 280px;
+				height: 32px;
+				line-height: 32px;
+				text-indent: 5px;
+				background: #fff;
+				border: none;
+			}
+			.e_btn {
+				float: left;
+				display: inline;
+				color: #fff;
+				width: 80px;
+				height: 32px;
+				line-height: 32px;
+				text-align: center;
+				background: #000;
+				border: none;
+				cursor: pointer;
+			}
+		}
+	}
+	.ft_logo {
+		float: right;
+		display: inline;
+		margin: 60px 60px 0 0;
+		img {
+			width: 140px;
+		}
+	}
+	.service_list {
+		float: left;
+		display: inline;
+		margin: 20px 0 0 100px;
+		li {
+			float: left;
+			display: inline;
+			width: 200px;
+			h3 {
+				color: #fff;
+				height: 32px;
+				line-height: 32px;
+			}
+			a {
+				display: block;
+				color: #fff;
+				height: 24px;
+				line-height: 24px;
+				&:hover {
+					color: #ddd;
+				}
+			}
+		}
+	}
+}
+
+.footer {
+	.payment {
+		text-align: center;
+		margin-top: 30px;
+		.payment_icon {
+			margin-right: 12px;
+		}
+		img {
+			height: 28px;
+		}
+	}
+	.copyright {
+		color: #fff;
+		font-size: 14px;
+		font-family: 'arial';
+		text-align: center;
+		margin-top: 20px;
+	}
+}
+

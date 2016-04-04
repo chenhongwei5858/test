@@ -1,0 +1,202 @@
+.icons-sprite, .about_banner .follow_us a.twitter, .about_banner .follow_us a.facebook, .about_banner .follow_us a.youtube, .con_pattern .pattern_list li .website, .con_pattern .pattern_list li .phone, .con_pattern .pattern_list li .email {
+  background-image: url("../images/icons-s3eec076f4d.png");
+  background-repeat: no-repeat; }
+
+#header {
+  position: fixed;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.35); }
+
+.about_banner {
+  position: relative;
+  height: 600px;
+  text-align: center;
+  background: url("../images/banner_about.jpg") no-repeat;
+  background-size: cover; }
+
+.about_banner .b_logo {
+  margin-top: 160px; }
+
+.about_banner .b_des {
+  color: #fff;
+  font-size: 12px;
+  width: 80%;
+  line-height: 20px;
+  margin: 50px auto 0 auto; }
+
+.about_banner .follow_us {
+  text-align: center;
+  margin-top: 70px; }
+
+.about_banner .follow_us a {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  width: 85px;
+  height: 85px;
+  margin: 0 40px; }
+
+.about_banner .follow_us a.twitter {
+  background-position: 0 -154px; }
+
+.about_banner .follow_us a.facebook {
+  background-position: 0 -19px; }
+
+.about_banner .follow_us a.youtube {
+  background-position: 0 -264px; }
+
+.contact_module {
+  padding: 60px 0 80px 0; }
+
+.con_header .con_title {
+  height: 50px;
+  line-height: 50px;
+  width: 240px;
+  text-align: center;
+  margin: 0 auto;
+  border-top: 1px solid #22d9e9;
+  border-bottom: 1px solid #22d9e9; }
+
+.con_header .con_title h3 {
+  color: #000;
+  font-size: 30px;
+  font-weight: normal; }
+
+.con_header .con_des {
+  color: #555;
+  font-size: 12px;
+  line-height: 20px;
+  width: 80%;
+  text-align: center;
+  margin: 30px auto 0 auto; }
+
+.con_main {
+  width: 80%;
+  margin-top: 80px;
+  overflow: hidden;
+  *zoom: 1; }
+
+.con_pattern {
+  float: left;
+  display: inline;
+  width: 50%; }
+
+.con_pattern .pattern_header {
+  color: #444;
+  font-size: 18px;
+  font-weight: normal;
+  padding-left: 40px; }
+
+.con_pattern .pattern_list li {
+  height: 36px;
+  line-height: 36px;
+  margin: 20px 0; }
+
+.con_pattern .pattern_list li .icon {
+  position: relative;
+  float: left;
+  display: inline; }
+
+.con_pattern .pattern_list li .website {
+  top: 5px;
+  width: 24px;
+  height: 25px;
+  background-position: 0 -239px; }
+
+.con_pattern .pattern_list li .phone {
+  top: 5px;
+  width: 25px;
+  height: 25px;
+  background-position: 0 -129px; }
+
+.con_pattern .pattern_list li .email {
+  top: 8px;
+  width: 25px;
+  height: 19px;
+  background-position: 0 0; }
+
+.con_pattern .pattern_list li p {
+  color: #9e9e9e;
+  font-size: 18px;
+  margin-left: 40px; }
+
+.con_pattern .pattern_list li p a {
+  color: #9e9e9e; }
+
+.con_pattern .pattern_list li p a:hover {
+  color: #333; }
+
+.send_mes {
+  float: right;
+  display: inline;
+  width: 400px; }
+
+.send_mes .send_header {
+  color: #444;
+  font-size: 18px;
+  font-weight: normal; }
+
+.send_mes .send_list {
+  margin-top: 20px; }
+
+.send_mes .send_list li {
+  position: relative;
+  margin: 8px 0; }
+
+.send_mes .send_list li input {
+  width: 400px;
+  height: 32px;
+  line-height: 32px;
+  padding: 8px 0;
+  text-indent: 10px;
+  border: 1px solid #ccc; }
+
+.send_mes .send_list li input:focus {
+  border-color: #33c5f5; }
+
+.send_mes .send_list li textarea {
+  width: 400px;
+  height: 80px;
+  padding: 6px 0;
+  border: 1px solid #ccc;
+  text-indent: 10px;
+  resize: none; }
+
+.send_mes .send_list li textarea:focus {
+  border-color: #33c5f5; }
+
+.send_mes .send_list li label.error {
+  position: absolute;
+  top: 0;
+  right: 12px;
+  display: block;
+  height: 32px;
+  line-height: 32px;
+  color: #c00; }
+
+.send_mes .mes_btn {
+  margin-top: 20px; }
+
+.send_mes .mes_btn .mes_input {
+  color: #fff;
+  font-size: 16px;
+  width: 84px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 3px;
+  border: none;
+  margin-right: 30px;
+  cursor: pointer; }
+
+.send_mes .mes_btn .mes_input.mes_sub {
+  background: #24c5f6; }
+
+.send_mes .mes_btn .mes_input.mes_cancel {
+  background: #dc306d; }
+
+.send_mes .mes_btn .mes_input:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8; }

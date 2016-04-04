@@ -1,0 +1,119 @@
+#main {
+  background: #fff; }
+
+.order_info {
+  margin: 30px 0 60px 0; }
+
+.order_head {
+  padding-bottom: 18px; }
+
+.order_head .order_title {
+  color: #333;
+  font-size: 28px;
+  font-weight: normal; }
+
+.order_head p {
+  color: #333;
+  font-size: 13px;
+  margin-top: 18px; }
+
+.order_main {
+  overflow: hidden;
+  *zoom: 1; }
+
+.order_address {
+  float: left;
+  display: inline;
+  width: 850px;
+  padding: 20px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px; }
+
+.order_address .title {
+  color: #333;
+  font-size: 20px;
+  margin-left: 20px; }
+
+.order_address .pay {
+  display: block;
+  width: 280px;
+  margin: 30px auto 0 auto; }
+
+.adr_list {
+  margin: 12px 0 0 20px; }
+
+.adr_list .adr_item {
+  margin: 20px 0; }
+
+.adr_list .adr_item .item_title {
+  float: left;
+  display: inline;
+  color: #333;
+  font-size: 14px;
+  width: 160px;
+  height: 30px;
+  line-height: 30px;
+  text-align: right;
+  margin-right: 12px; }
+
+.adr_list .adr_item .adr_input {
+  width: 300px;
+  height: 30px;
+  line-height: 30px;
+  text-indent: 5px; }
+
+.adr_list .adr_item label.error {
+  color: #c00;
+  margin-left: 12px; }
+
+.order_summary {
+  float: right;
+  display: inline;
+  width: 320px;
+  border: 1px solid #ddd;
+  border-radius: 5px; }
+
+.order_summary .order_sum {
+  padding: 20px 12px; }
+
+.order_summary .order_sum .pay {
+  display: block;
+  width: 280px; }
+
+.order_summary .order_sum .pay:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8; }
+
+.order_summary .order_sum .sum_list {
+  width: 280px;
+  padding-bottom: 6px;
+  margin: 12px auto 0 auto; }
+
+.order_summary .order_sum .sum_list li {
+  color: #333;
+  height: 28px;
+  line-height: 28px; }
+
+.order_summary .order_sum .sum_list li .cost {
+  float: right;
+  display: inline; }
+
+.order_summary .order_sum .sum_list li.order_total {
+  color: #c00;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #eee; }
+
+.order_summary .order_sum .sum_list li .paypal {
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  margin: 20px 0 0 10px; }
+
+.order_summary .order_sum .sum_list li .paypal input {
+  margin-right: 12px; }
+
+.order_summary .order_sum .sum_list li .paypal img {
+  height: 40px; }

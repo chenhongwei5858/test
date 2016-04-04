@@ -1,0 +1,159 @@
+@import 'compass';
+@import 'component';
+
+
+.product_show {
+	@include box-shadow(1px 1px 1px #ddd);
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	margin-top: 30px;
+}
+.product_show_module {
+	@include pie-clearfix;
+	padding: 60px 50px 30px 50px;
+}
+
+.photo_show {
+	float: left;
+	display: inline;
+	width: 500px;
+	.sliderBox {
+		height: 500px;
+		.slider {
+			@include clearfix;
+		}
+		img {
+			width: 500px;
+			height: 500px;
+		}
+	}
+	.control {
+		height: 64px;
+		margin-left: -10px;
+		li {
+			float: left;
+			display: inline;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+			margin: 0 10px;
+			cursor: pointer;
+			overflow: hidden;
+			&.current {
+				border-color: #c00;
+			}
+			img {
+				width: 60px;
+				height: 60px;
+			}
+		}
+		
+	}
+}
+
+.pro_info {
+	float: right;
+	display: inline;
+	width: 420px;
+	.info_item {
+		border-bottom: 1px solid #eee;
+	}
+	.info_des {
+		padding-bottom: 20px;
+		dt {
+			color: #333;
+			font-size: 28px;
+			margin-bottom: 16px;
+		}
+		dd {
+			color: #666;
+			font-size: 14px;
+			line-height: 24px;
+		}
+	}
+	.info_item_price {
+		color: $font_red;
+		font-size: 18px;
+		padding: 20px 0;
+		text-indent: 6px;
+		i {
+			font-size: 30px;
+			font-style: normal;
+			margin-left: 5px;
+			vertical-align: sub;
+		}
+	}
+	.info_item_pur {
+		@include pie-clearfix;
+		padding: 20px 0;
+		.pur_num {
+			float: left;
+			display: inline;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+			overflow: hidden;
+			.num_count {
+				float: left;
+				display: inline;
+				color: #bbb;
+				width: 40px;
+				height: 40px;
+				line-height: 40px;
+				font-size: 20px;
+				text-align: center;
+				background: #eee;
+				cursor: pointer;
+			}
+			.num_sub {
+				font-size: 26px;
+			}
+			.num {
+				float: left;
+				display: inline;
+				color: #666;
+				input {
+					height: 40px;
+					line-height: 40px;
+					width: 40px;
+					text-align: center;
+					border: none;
+				}
+			}
+		}
+		.purchase {
+			float: left;
+			display: inline;
+			width: 180px;
+			margin-left: 40px;
+			&:hover {
+				@include opacity(0.8);
+			}
+		}
+	}
+}
+
+
+// product description
+.product_des {
+	@include box-shadow(1px 1px 1px #ddd);
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	margin: 30px 0 60px 0;
+	overflow: hidden;
+	.pro_des_head {
+		height: 50px;
+		line-height: 50px;
+		background: #f5f5f5;
+		h3 {
+			color: #333;
+			font-size: 20px;
+			text-indent: 30px;
+		}
+	}
+	.pro_des_con {
+		img {
+			width: 100%;
+		}
+	}
+}

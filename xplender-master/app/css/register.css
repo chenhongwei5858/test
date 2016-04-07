@@ -1,0 +1,79 @@
+.register {
+	padding: 50px;
+	margin: 30px 0;
+	background: #fff;
+	border-radius: 5px;
+}
+.register .register_title {
+	color: #666;
+	font-size: 20px;
+}
+.register_input {
+	margin-top: 40px;
+}
+.register_input .register_item {
+	margin: 20px 0;
+}
+.register_input .register_item label {
+	float: left;
+	display: inline;
+	color: #333;
+	font-size: 16px;
+	width: 180px;
+	height: 32px;
+	line-height: 32px;
+}
+.register_item .register_text {
+	color: #333;
+	width: 320px;
+	height: 32px;
+	line-height: 32px;
+	text-indent: 5px;
+	background: #fff;
+	border: 1px solid #ddd;
+}
+
+.register_check_item {
+	color: #666;
+	margin: 10px 0 0 0;
+}
+.register_check_item a {
+	color: #666;
+}
+.register_check_item a:hover {
+	color: #333;
+}
+.register_check_item input {
+	margin-right: 6px;
+}
+.register .reg_sub {
+	margin: 40px 0 0 180px;
+}
+.reg_sub .register_btn {
+	color: #fff;
+	font-size: 14px;
+	width: 80px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	background: #c00;
+	border: none;
+	cursor: pointer;
+}
+.reg_sub .login_link {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	color: #333;
+	font-size: 14px;
+	margin: 0 12px;
+}
+
+
+
+
+
+
+
+
+

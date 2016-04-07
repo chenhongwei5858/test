@@ -264,3 +264,45 @@ img {
   font-family: 'arial';
   text-align: center;
   margin-top: 20px; }
+
+
+.login_info {
+  float: right;
+  display: inline;
+  padding-top: 12px;
+}
+.login_info li {
+  float: left;
+  display: inline;
+  height: 24px;
+}
+.login_info .login_text {
+  color: #333;
+  width: 120px;
+  height: 24px;
+  line-height: 24px;
+  text-indent: 5px;
+  background: #fff;
+  border: none;
+  margin-right: 12px;
+}
+.login_info .login_btn {
+  color: #fff;
+  font-size: 14px;
+  width: 60px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  background: #c00;
+  border: none;
+  cursor: pointer;
+}
+.login_info .register_link {
+  display: block;
+  color: #fff;
+  font-size: 14px;
+  margin-left: 12px;
+  height: 24px;
+  line-height: 24px;
+}
+

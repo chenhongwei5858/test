@@ -1,6 +1,18 @@
 define(function(require, exports, module){
 	// common func
-	var $ = require('jquery');
+	var $ = require('jquery'),
+		layer = require('layer');
+
+	// login layer
+	// exports.base = function(){
+	// 	$('#login').on('click', function(){
+	// 		layer.open({
+	// 			type: 1,
+	// 			title: 'login',
+	// 			content: 'login form'
+	// 		});
+	// 	});
+	// };	
 
 	exports.setAmount = function(element){
 

@@ -39,8 +39,8 @@ require_once '../include.php';
 			<!-- product 3 -->
 			<section class="product_section white">
 				<div class="middle_show">
-					<a class="middle_show_photo" href="product_detail.php">
-						<img src="images/temp/product7.jpg">
+					<a class="middle_show_photo" href="product_detail1.php">
+						<img src="images/temp/product1/480x480.jpg">
 					</a>
 					<div class="middle_show_des">
 						<div class="show_info">
@@ -51,8 +51,8 @@ require_once '../include.php';
 					</div>
 				</div>
 				<div class="middle_show">
-					<a class="middle_show_photo" href="product_detail.php">
-						<img src="images/temp/product3.jpg">
+					<a class="middle_show_photo" href="product_detail2.php">
+						<img src="images/temp/product2/480x480.jpg">
 					</a>
 					<div class="middle_show_des">
 						<div class="show_info">
@@ -63,8 +63,8 @@ require_once '../include.php';
 					</div>
 				</div>
 				<div class="middle_show">
-					<a class="middle_show_photo" href="product_detail.php">
-						<img src="images/temp/product8.jpg">
+					<a class="middle_show_photo" href="product_detail3.php">
+						<img src="images/temp/product3/480x480.jpg">
 					</a>
 					<div class="middle_show_des">
 						<div class="show_info">
@@ -79,8 +79,8 @@ require_once '../include.php';
 			<!-- product 3 -->
 			<section class="product_section white">
 				<div class="middle_show">
-					<a class="middle_show_photo" href="">
-						<img src="images/temp/product3.jpg">
+					<a class="middle_show_photo" href="product_detail4.php">
+						<img src="images/temp/product4/480x480.jpg">
 					</a>
 					<div class="middle_show_des">
 						<div class="show_info">
@@ -91,20 +91,8 @@ require_once '../include.php';
 					</div>
 				</div>
 				<div class="middle_show">
-					<a class="middle_show_photo" href="">
-						<img src="images/temp/product8.jpg">
-					</a>
-					<div class="middle_show_des">
-						<div class="show_info">
-							<h3><a href="">Yeelight床头灯</a></h3>
-							<p class="info"><a href="">触摸式操作 给卧室1600万种颜色</a></p>
-						</div>
-						<span class="price">$<i class="number">99.00</i></span>
-					</div>
-				</div>
-				<div class="middle_show">
-					<a class="middle_show_photo" href="">
-						<img src="images/temp/product7.jpg">
+					<a class="middle_show_photo" href="product_detail5.php">
+						<img src="images/temp/product5/480x480.jpg">
 					</a>
 					<div class="middle_show_des">
 						<div class="show_info">

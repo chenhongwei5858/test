@@ -83,7 +83,7 @@
   transition: all, 0.5s, ease-in;
   float: left;
   display: inline;
-  margin: 30px 0 0 80px; }
+  margin: 45px 0 0 80px; }
 
 .product_section .large_show_pro1 .pro_photo:hover {
   -moz-transform: translateX(10px);
@@ -121,7 +121,7 @@
   transition: all, 0.5s, ease-in;
   float: right;
   display: inline;
-  margin: 80px 100px 0 0; }
+  margin: 50px 80px 0 0; }
 
 .product_section .large_show_pro2 .pro_photo:hover {
   -moz-transform: translateX(-10px);
@@ -135,7 +135,7 @@
   margin: 100px 0 0 80px; }
 
 .product_section .large_show_pro2 .show_text .title {
-  color: #ccc;
+  color: #444;
   font-size: 36px; }
 
 .product_section .large_show_pro2 .show_text .des {

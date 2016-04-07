@@ -58,6 +58,7 @@ require_once '../include.php';
 							</li>
 							<li class="info_item">
 								<div class="info_item_price">$<i>199</i></div>
+								<span class="norton"><img src="images/norton.gif" alt="norton"></span>
 							</li>
 							<li class="info_item">
 								<div class="info_item_pur">
@@ -67,6 +68,7 @@ require_once '../include.php';
 										<span class="num_count num_add">+</span>
 									</div>
 									<input class="purchase btn" type="submit" value="Buy">
+									<span class="collection">collection</span>
 								</div>
 							</li>
 						</ul>
@@ -77,14 +79,118 @@ require_once '../include.php';
 			<!-- product description -->
 			<section class="product_des">
 				<div class="pro_des_head">
-					<h3>Description</h3>
+					<ul class="des_head tab_menu">
+						<li>Description</li>
+						<li>Customer Review</li>
+					</ul>
 				</div>
-				<div class="pro_des_con">
-					<img src="images/temp/des1.jpg" alt="description">
-					<img src="images/temp/des2.jpg" alt="description">
-					<img src="images/temp/des3.jpg" alt="description">
-					<img src="images/temp/des4.jpg" alt="description">
+				<div class="des_content tab_content">
+					<div class="tab_con">
+						<div class="des_item product_description tab_conItem">
+							<img src="images/temp/des1.jpg" alt="description">
+							<img src="images/temp/des2.jpg" alt="description">
+							<img src="images/temp/des3.jpg" alt="description">
+							<img src="images/temp/des4.jpg" alt="description">
+						</div>
+						<div class="des_item review_content tab_conItem">
+							<!-- customer review -->
+							<div class="customer_review">
+								<div class="review_stars">
+									<h4>Average Rating</h4>
+									<span class="average_rating_star"><i class="star"></i></span>
+									<span>5.0 out of 5</span>
+								</div>
+								<ul class="star_list">
+									<li>5<i class="star"></i><span class="percent_total"><i class="percent"></i></span><span class="num">5</span></li>
+									<li>4<i class="star"></i><span class="percent_total"><i class="percent"></i></span><span class="num">4</span></li>
+									<li>3<i class="star"></i><span class="percent_total"><i class="percent"></i></span><span class="num">3</span></li>
+									<li>2<i class="star"></i><span class="percent_total"><i class="percent"></i></span><span class="num">2</span></li>
+									<li>1<i class="star"></i><span class="percent_total"><i class="percent"></i></span><span class="num">1</span></li>
+								</ul>
+								<div class="write_review">
+									<div class="write_review_text">
+										<p>We want to hear from you!</p>
+										<p>You can leave your review after login and purchase.</p>
+									</div>
+									<a href="#add_review" class="review_btn">Write a review</a>
+								</div>
+							</div>
+						
+							<!-- customer review list -->
+							<ul class="customer_review_list">
+								<li class="review_item ">
+									<!-- customer info -->
+									<div class="customer_info">
+										<span class="customer_info_stars"><i class="star5"></i></span>
+										<span class="customer_name">By Tracy</span>
+										<span class="order_info">I bought: White,M</span>
+									</div>
+									<!-- review info -->
+									<div class="review_info">
+										<p class="review_date">02/10/2015</p>
+										<p class="review_description">size is ok</p>
+									</div>
+								</li>
+								<li class="review_item ">
+									<!-- customer info -->
+									<div class="customer_info">
+										<span class="customer_info_stars"><i class="star5"></i></span>
+										<span class="customer_name">By Tracy</span>
+										<span class="order_info">I bought: White,M</span>
+									</div>
+									<!-- review info -->
+									<div class="review_info">
+										<p class="review_date">02/10/2015</p>
+										<p class="review_description">size is ok</p>
+									</div>
+								</li>
+								<li class="review_item ">
+									<!-- customer info -->
+									<div class="customer_info">
+										<span class="customer_info_stars"><i class="star5"></i></span>
+										<span class="customer_name">By Tracy</span>
+										<span class="order_info">I bought: White,M</span>
+									</div>
+									<!-- review info -->
+									<div class="review_info">
+										<p class="review_date">02/10/2015</p>
+										<p class="review_description">size is ok</p>
+									</div>
+								</li>
+							</ul>
+
+							<!-- add customer review -->
+							<div id="add_review" class="add_review_main">
+								<form class="customer_review_form" action="" name="review">
+									<ul class="add_review_list">
+										<li class="add_review_item">
+											<input id="review_star" type="hidden" name="review_star">
+											<span class="add_review_title">Stars</span>
+											<div class="add_review_info">
+												<ul class="add_star">
+													<li></li>
+													<li></li>
+													<li></li>
+													<li></li>
+													<li></li>
+												</ul>
+											</div>
+										</li>
+										<li class="add_review_item">
+											<span class="add_review_title">Review</span>
+											<div class="add_review_info">
+												<textarea name="text_info" id="" class="add_review_text"></textarea>
+											</div>
+										</li>
+										<li><input type="submit" class="review_sub" value="submit"></li>
+									</ul>
+								</form>
+							</div>
+						</div>
+
+					</div>
 				</div>
+				
 			</section>
 
 		</div>

@@ -34,7 +34,8 @@
 
 .photo_show .control {
   height: 64px;
-  margin-left: -10px; }
+  margin-left: -10px;
+  margin-top: 5px; }
 
 .photo_show .control li {
   float: left;
@@ -46,7 +47,8 @@
   overflow: hidden; }
 
 .photo_show .control li.current {
-  border-color: #c00; }
+  // border-color: #c00; 
+}
 
 .photo_show .control li img {
   width: 60px;
@@ -58,6 +60,8 @@
   width: 420px; }
 
 .pro_info .info_item {
+  overflow: hidden;
+  *zoom: 1;
   border-bottom: 1px solid #eee; }
 
 .pro_info .info_des {
@@ -74,11 +78,21 @@
   line-height: 24px; }
 
 .pro_info .info_item_price {
+  float: left;
+  display: inline;
   color: #c00;
   font-size: 18px;
   padding: 20px 0;
   text-indent: 6px; }
-
+.pro_info .norton {
+  float: right;
+  display: inline;
+  margin: 20px 20px 0 0;
+}
+.pro_info .norton img {
+  width: 56px;
+  height: 38px;
+}
 .pro_info .info_item_price i {
   font-size: 30px;
   font-style: normal;
@@ -138,6 +152,20 @@
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8; }
 
+.info_item_pur .collection {
+  float: right;
+  display: inline;
+  width: 25px;
+  height: 25px;
+  text-indent: 9999em;
+  margin: 10px 10px 0 0;
+  cursor: pointer;
+  background: url('../images/heart-empty.png');
+}
+.info_item_pur .collection.active {
+  background: url('../images/heart-full.png');
+}
+
 .product_des {
   -moz-box-shadow: 1px 1px 1px #ddd;
   -webkit-box-shadow: 1px 1px 1px #ddd;
@@ -151,12 +179,219 @@
 .product_des .pro_des_head {
   height: 50px;
   line-height: 50px;
-  background: #f5f5f5; }
+  border-bottom: 1px solid #eee;
+  background: #fff; }
 
-.product_des .pro_des_head h3 {
+.pro_des_head .des_head li {
+  float: left;
+  display: inline;
+  font-size: 16px;
+  padding: 0 40px;
+  cursor: pointer;
+}
+.pro_des_head .des_head li.current {
+  color: #fff;
+  background: #000;
+}
+.product_des .product_description {
+  padding: 30px;
+}
+.product_des .product_description img {
+  display: block;
+  margin: 0 auto;
+  max-width: 1000px; }
+
+
+.customer_review {
+  overflow: hidden;
+  *zoom: 1;
+  padding: 40px 20px 30px 30px;
+  border-bottom: 1px solid #eee;
+}
+.customer_review .review_stars {
+  float: left;
+  display: inline;
+  color: #666;
+}
+.customer_review .review_stars h4 {
+  font-size: 14px;
+  font-weight: normal;
+}
+.review_stars .average_rating_star {
+  display: block;
+  width: 110px;
+  height: 22px;
+  margin: 10px 0;
+  background: url('../images/comment-stars.png');
+}
+.review_stars .average_rating_star i {
+  float: left;
+  display: inline;
+  width: 110px;
+  height: 22px;
+  background: url('../images/comment-stars.png') 0 -22px no-repeat;
+}
+.customer_review .review_stars span {
+  font-size: 12px;
+}
+.customer_review .star_list {
+  float: left;
+  display: inline;
+  color: #666;
+  margin-left: 30px;
+}
+.customer_review .star_list .star {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 12px;
+  height: 12px;
+  margin-left: 6px;
+  background: url('../images/comment-stars.png') 0 -56px no-repeat;
+}
+.star_list .percent_total {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 180px;
+  height: 10px;
+  margin-left: 12px;
+  background: #fff;
+}
+.star_list .percent_total .percent {
+  display: block;
+  width: 100%;
+  height: 10px;
+  background: #c00;
+}
+.customer_review .star_list .num {
+  margin-left: 8px;
+}
+.customer_review .write_review {
+  float: right;
+  display: inline;
+}
+.customer_review .write_review p {
+  font-size: 14px;
+  line-height: 20px;
+}
+.customer_review .write_review .review_btn {
+  display: block;
+  color: #fff;
+  font-size: 14px;
+  width: 160px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background: #c00;
+  margin-top: 20px;
+  border-radius: 3px;
+}
+.customer_review_list .review_item {
+  overflow: hidden;
+  *zoom: 1;
+  padding: 20px 0 30px 0;
+  border-bottom: 1px solid #eee;
+}
+.customer_review_list .customer_info {
+  float: left;
+  display: inline;
+  color: #666;
+  width: 240px;
+  margin-left: 30px;
+}
+.customer_info .customer_info_stars {
+  display: block;
+  width: 70px;
+  height: 12px;
+  background: url('../images/comment-stars.png') 0 -44px no-repeat;
+}
+.customer_info .customer_info_stars i {
+  display: block;
+  width: 70px;
+  height: 12px;
+  background: url('../images/comment-stars.png') 0 -56px no-repeat;
+}
+.customer_info .customer_name {
+  display: block;
+  font-size: 16px;
+  margin: 12px 0;
+}
+.customer_review_list .review_info {
+  float: left;
+  display: inline;
+}
+.customer_review_list .review_info .review_date {
+  color: #999;
+}
+.customer_review_list .review_info .review_description {
   color: #333;
-  font-size: 20px;
-  text-indent: 30px; }
+  font-size: 14px;
+  line-height: 20px;
+  width: 500px;
+  margin-top: 16px;
+}
 
-.product_des .pro_des_con img {
-  width: 100%; }
+.add_review_main {
+  padding: 30px;
+}
+.add_review_list .add_review_item {
+  margin-bottom: 20px;
+  overflow: hidden;
+  *zoom: 1;
+}
+.add_review_list .add_review_item label.error {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  color: #c00;
+  font-size: 14px;
+  height: 22px;
+  line-height: 22px;
+  margin-left: 10px;
+  vertical-align: bottom;
+}
+.add_review_item .add_review_title {
+  float: left;
+  display: inline;
+  width: 160px;
+  color: #666;
+  font-size: 14px;
+}
+.add_review_item .add_review_info {
+  float: left;
+  display: inline;
+}
+.add_review_info .add_star li {
+  float: left;
+  display: inline;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  background: url('../images/comment-stars.png') no-repeat;
+}
+.add_review_info .add_star li.current,
+.add_review_info .add_star li.active {
+  background-position: 0 -22px;
+}
+.add_review_info .add_review_text {
+  width: 300px;
+  height: 100px;
+  padding: 6px;
+  line-height: 18px;
+  border: 1px solid #ddd;
+  resize: none;
+}
+.add_review_main .review_sub {
+  color: #fff;
+  font-size: 16px;
+  width: 120px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  background: #c00;
+  border-radius: 3px;
+  border: none;
+  margin-left: 160px;
+  cursor: pointer;
+}

@@ -1,5 +1,6 @@
 
-
+// var MD={};
+// MD.layerDir="/app/js/plugin/layer/";
 ;(function(){
 
 	seajs.config({
@@ -20,6 +21,7 @@
 			'tab': '{plugin}tab.js',
 			'validate': '{plugin}validate/jquery.validate.js',
 			'addMethod': '{plugin}validate/additional-methods.js',
+			'layer': '{plugin}layer/layer.js',
 
 			'common': 'js/common.js',
 			'index': '{module}index.js',

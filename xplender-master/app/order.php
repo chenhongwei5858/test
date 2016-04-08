@@ -15,7 +15,7 @@ require_once '../include.php';
 	<header id="header">
 		<section class="header w">
 			<!-- logo -->
-			<a href="index.php" class="logo"><img src="images/logo.png" alt="logo"></a>
+			<a href="index.php" class="logo"><img src="images/logo.png" alt="lo go"></a>
 		</section>
 	</header>
 

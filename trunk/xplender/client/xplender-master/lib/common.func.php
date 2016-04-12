@@ -50,7 +50,7 @@ function order($product_url){
 	    $mes="order success!<br /><a href='app/index.php'>go to index page</a>";
 	}else{
 		echo $product_url;
-	    $mes="order fail! please try again<br /><a href='app/{$product_url}.php'>return back product page</a>";
+	    $mes="order fail! please try again<br /><a href='app/{$product_url}'>return back product page</a>";
 	}
 	return $mes;
 }

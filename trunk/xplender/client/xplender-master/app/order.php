@@ -162,7 +162,7 @@ $delivery="20.00";
 								    <li>
 										<span class="title">Number:</span>
 										<span class="cost"><?php echo $number; ?></span>
-										<input type="hidden" name="number" value="<?php echo $number; ?>">
+										<input type="hidden" name="order_number" value="<?php echo $number; ?>">
 									</li>
 									<li>
 										<span class="title">Product:</span>

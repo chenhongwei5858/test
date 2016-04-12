@@ -1,5 +1,13 @@
 <?php
 require_once '../include.php';
+$product_url=$_REQUEST['product'];
+//检查是否登入
+checkCustomerLogined($product_url);
+
+$row=SCInformation("xplender_product","product_url='{$product_url}'");
+
+$number=$_POST['number'];
+$buy_price=$number*$row['product_price'];
 
 ?>
 <!DOCTYPE html>
@@ -29,43 +37,54 @@ require_once '../include.php';
 	<!-- main -->
 	<main id="main">
 		<div class="w">
-			<section class="cart_module">
-				<div class="cart_head">
-					<ul class="cart_title">
-						<li class="name">Product Name</li>
-						<li class="price">Price</li>
-						<li class="number">Number</li>
-						<li class="total">Total</li>
-					</ul>
-				</div>
-				<div class="cart_main">
-					<ul class="cart_list">
-						<li class="cart_item">
-							<div class="cart_pro_item product_name">
-								<div class="pro_thumb">
-									<a href=""><img src="images/temp/s_show2.jpg"></a>
+		    <form action="order.php?product=<?php echo $product_url; ?>" method="post">
+		      	<section class="cart_module">
+	    			<div class="cart_head">
+		    			<ul class="cart_title">
+		    				<li class="name">Product Name</li>
+		    				<li class="price">Price</li>
+		    				<li class="number">Number</li>
+		    				<li class="total">Total</li>
+		    			</ul>
+		    		</div>
+		    		<div class="cart_main">
+		    			<ul class="cart_list">
+		    				<li class="cart_item">
+		    					<div class="cart_pro_item product_name">
+		    						<div class="pro_thumb">
+									    <?php echo "<img src='{$row['images_url']}' />"; ?>
+		    							<!--<a href=""><img src="images/temp/s_show2.jpg"></a>-->
+		    						</div>
+		    						<div class="pro_name">
+									    <?php echo $row['product_name']; ?>
+		    							<!--<a href="">Yeelight床头灯 </a>-->
+		    						</div>
+			    				</div>
+				    			<div class="cart_pro_item product_price">
+								$<?php echo $row['product_price']; ?>
+								<!--$199.00-->
 								</div>
-								<div class="pro_name">
-									<a href="">Yeelight床头灯 </a>
+					    		<div class="cart_pro_item product_number">
+						    		<span class="num_count num_sub">-</span>
+							    	<span class="num"><input type="text" value="<?php echo $number; ?>" name="number"></span>
+								    <span class="num_count num_add">+</span>
+    							</div>
+	    						<div class="cart_pro_item product_total">
+								    $<?php printf("%.2f",$buy_price); ?>
+								<!-- $199.00 -->
 								</div>
-							</div>
-							<div class="cart_pro_item product_price">$199.00</div>
-							<div class="cart_pro_item product_number">
-								<span class="num_count num_sub">-</span>
-								<span class="num"><input type="text" value="1"></span>
-								<span class="num_count num_add">+</span>
-							</div>
-							<div class="cart_pro_item product_total">$199.00</div>
-						</li>
-					</ul>
-				</div>
-				<div class="cart_shop">
-					<div class="next">
-						<span class="total">Total<i>$199.00</i></span>
-						<input class="shopping" type="submit" value="NEXT">
-					</div>
-				</div>
-			</section>
+		    				</li>
+			    		</ul>
+  				    </div>
+	    			<div class="cart_shop">
+		    			<div class="next">
+			    			<span class="total">Total<i>$<?php printf("%.2f",$buy_price); ?><!--$199.00--></i></span>
+				    		<input class="shopping" type="submit" value="NEXT">
+					    </div>
+				    </div>
+			    </section>
+			</form>	
+		    </form>
 		</div>
 	</main>
 

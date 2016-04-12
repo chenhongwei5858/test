@@ -35,7 +35,7 @@ require_once '../include.php';
 					   echo "<button type='submit' class='login_btn'>Login</button>";
 				       echo "</form>";
 					 }else{
-					   echo "<a href='../doAction.php?act=customerLogout'>log out</a>";
+					   echo "<a href='../doAction.php?act=customerLogout' style='color:#ffffff;'>log out</a>";
 					 }
 				   ?>
 				 </li>

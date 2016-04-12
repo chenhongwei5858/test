@@ -1,6 +1,6 @@
 <?php
 require_once '../include.php';
-
+$all_row=allInformation("xplender_product");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +36,40 @@ require_once '../include.php';
 				<p><a href="index.php">Home</a>><a href="product.php">Product List</a></p>
 			</div>
 
-			<!-- product 3 -->
+			
+			
+			
+			
+			<?php foreach($all_row as $row): ?>
+			    <?php 
+				    $product_id=$row['product_id'];
+				    if(($product_id+2)%3==0){
+					    echo "<section class='product_section white'>";
+				  }
+				?>
+					<div class="middle_show">
+						<?php
+                            echo "<a class='middle_show_photo' href='{$row['product_url']}'>";
+							echo "<img src='{$row['images_url']}' />";
+                            echo "</a>";
+						?>
+						<div class="middle_show_des">
+						    <div class="show_info">
+							    <?php 
+								    echo "<h3><a href='{$row['product_url']}'>{$row['product_name']}</a></h3>";
+									echo "<p class='info'><a href='{$row['product_url']}'>{$row['product_illustration']}</a></h3>";
+								?>
+							</div>
+							<span class="price">$<i class="number"><?php echo $row['product_price']; ?></i></span>
+						</div>
+					</div>
+				<?php
+                    if($product_id%3==0){
+						echo "</section>";
+					}
+				?>				
+		    <?php endforeach; ?>			
+			<!-- product 3
 			<section class="product_section white">
 				<div class="middle_show">
 					<a class="middle_show_photo" href="product_detail1.php">
@@ -74,9 +107,9 @@ require_once '../include.php';
 						<span class="price">$<i class="number">99.00</i></span>
 					</div>
 				</div>
-			</section>
+			</section> -->
 
-			<!-- product 3 -->
+			<!-- product 3 
 			<section class="product_section white">
 				<div class="middle_show">
 					<a class="middle_show_photo" href="product_detail4.php">
@@ -102,7 +135,7 @@ require_once '../include.php';
 						<span class="price">$<i class="number">99.00</i></span>
 					</div>
 				</div>
-			</section>
+			</section>-->
 
 		</div>
 	</main>

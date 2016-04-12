@@ -1,5 +1,10 @@
 <?php
 require_once '../include.php';
+$customer_id=@$_SESSION['login_customer_id']?$_SESSION['login_customer_id']:0;
+//值为该商品的url,每个商品页都得修改（以product_detail1为例）
+$product_url="product_detail1.php";
+
+$product_row=SCInformation("xplender_product","product_url='{$product_url}'");
 
 ?>
 <!DOCTYPE html>
@@ -31,7 +36,7 @@ require_once '../include.php';
 		<div class="w">
 			<!-- product show -->
 			<section class="product_show">
-				<form name="purchase" action="">
+				<form name="purchase" action="cart.php?product=<?php echo $product_url; ?>" method="post">
 					<div class="product_show_module">
 						<div class="photo_show">
 							<div class="sliderBox">
@@ -68,7 +73,10 @@ require_once '../include.php';
 										<span class="num_count num_add">+</span>
 									</div>
 									<input class="purchase btn" type="submit" value="Buy">
-									<span class="collection">collection</span>
+									<?php
+									    collection($customer_id,$product_row['product_id']);
+									?>
+									<!--<span class="collection">collection</span>-->
 								</div>
 							</li>
 						</ul>

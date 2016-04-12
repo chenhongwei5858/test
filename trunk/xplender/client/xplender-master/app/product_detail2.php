@@ -1,6 +1,10 @@
 <?php
 require_once '../include.php';
+$customer_id=@$_SESSION['login_customer_id']?$_SESSION['login_customer_id']:0;
+//值为该商品的url
+$product_url="product_detail2.php";
 
+$product_row=SCInformation("xplender_product","product_url='{$product_url}'");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +35,7 @@ require_once '../include.php';
 		<div class="w">
 			<!-- product show -->
 			<section class="product_show">
-				<form name="purchase" action="">
+				<form name="purchase" action="cart.php?product=<?php echo $product_url; ?>" method="post">
 					<div class="product_show_module">
 						<div class="photo_show">
 							<div class="sliderBox">
@@ -64,7 +68,10 @@ require_once '../include.php';
 										<span class="num_count num_add">+</span>
 									</div>
 									<input class="purchase btn" type="submit" value="Buy">
-									<span class="collection">collection</span>
+									<?php
+									    collection($customer_id,$product_row['product_id']);
+									?>
+									<!--<span class="collection">collection</span>-->
 								</div>
 							</li>
 						</ul>
@@ -237,7 +244,6 @@ require_once '../include.php';
 	<script type="text/javascript" src="js/config.js"></script>
 	<script type="text/javascript">
 		seajs.use('product');
-	</script>
-	
+	</script>	
 </body>
 </html>

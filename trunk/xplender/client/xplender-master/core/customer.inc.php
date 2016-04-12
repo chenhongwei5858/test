@@ -71,6 +71,17 @@ function register(){
   }
   return $mes;
 }
+//检查是否有客户
+function checkCustomer($sql){
+  return fetchOne($sql);
+}
+//检查是否登录
+function checkCustomerLogined($page="index"){
+  error_reporting(0);
+  if($_SESSION['login_customer_id']==""){
+    alertMes("请先登录","login.php?page={$page}");
+  }
+}
 
 
 

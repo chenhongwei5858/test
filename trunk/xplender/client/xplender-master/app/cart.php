@@ -1,8 +1,8 @@
 <?php
 require_once '../include.php';
-$product_url=$_REQUEST['product'];
-//检查是否登入
-checkCustomerLogined($product_url);
+@$product_url=$_REQUEST['product'];
+
+@$customer_email=$_SESSION['login_customer_name'];
 
 $row=SCInformation("xplender_product","product_url='{$product_url}'");
 
@@ -30,6 +30,24 @@ $buy_price=$number*$row['product_price'];
 				<li class="current"><a href="index.php">Home</a></li>
 				<li><a href="product.php">Product</a></li>
 				<li><a href="about.php">About us</a></li>
+			</ul>
+			<ul class="login_info">
+				<li>
+				   <?php
+				     if(@$_SESSION['login_customer_id']==""){
+					   echo "<form action='doCustomerLogin.php?page=cart.php' method='post'>";
+				       // echo "<label class='' name='customer_name'>log in</label>";
+					   echo "<input class='login_text' type='text' id='customer_name' name='customer_email' placeholder='username' />";
+					   echo "<input class='login_text' type='password' id='password' name='customer_password' placeholder='password' />";
+					   echo "<button type='submit' class='login_btn'>Login</button>";
+				       echo "</form>";
+					 }else{
+					   echo "<a href='personal_center.php' style='color:#ffffff;'>Greetings,{$customer_email}</a> ";
+					   echo "<a href='../doAction.php?act=customerLogout' style='color:#ffffff;'>log out</a>";
+					 }
+				   ?>
+				 </li>
+				<li><a class="register_link" href="register.php">register</a></li>
 			</ul>
 		</section>
 	</header>

@@ -1,6 +1,6 @@
 <?php
 require_once '../include.php';
-
+@$customer_email=$_SESSION['login_customer_name'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,6 +22,24 @@ require_once '../include.php';
 				<li><a href="index.php">Home</a></li>
 				<li><a href="product.php">Product</a></li>
 				<li><a href="about.php">About us</a></li>
+			</ul>
+			<ul class="login_info">
+				<li>
+				   <?php
+				     if(@$_SESSION['login_customer_id']==""){
+					   echo "<form action='doCustomerLogin.php?page=term_use.php' method='post'>";
+				       // echo "<label class='' name='customer_name'>log in</label>";
+					   echo "<input class='login_text' type='text' id='customer_name' name='customer_email' placeholder='username' />";
+					   echo "<input class='login_text' type='password' id='password' name='customer_password' placeholder='password' />";
+					   echo "<button type='submit' class='login_btn'>Login</button>";
+				       echo "</form>";
+					 }else{
+					   echo "<a href='personal_center.php' style='color:#ffffff;'>Greetings,{$customer_email}</a> ";
+					   echo "<a href='../doAction.php?act=customerLogout' style='color:#ffffff;'>log out</a>";
+					 }
+				   ?>
+				 </li>
+				<li><a class="register_link" href="register.php">register</a></li>
 			</ul>
 		</section>
 	</header>

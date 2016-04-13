@@ -17,59 +17,83 @@ function allInformation($table,$where=null){
 	$row=fetchAll($sql);
 	return $row;
 }
-//添加地址
-function address(){
+
+//修改地址
+function updateAddress(){
 	$arr=$_POST;
-	$customer_id=$_SESSION['login_customer_id'];
-	$keys="`".join("`,`",array_keys($arr))."`";
-	$keys="`customer_id`,".$keys;
-	$vals="'".join("','",array_values($arr))."'";
-	$vals="'".$customer_id."',".$vals;
-	$sql="insert `xplender_address`($keys) values({$vals})";
-	mysql_query($sql);
-	if(mysql_insert_id()){
-	    $mes="add address success!<br /><a href='app/order.php'>return back</a>";
+	$customer_email=$_POST['customer_email'];
+	if(update("xplender_customer",$arr,"customer_email='{$customer_email}'")){
+	    $mes="change address success<br /><a href='app/personal_center.php'>return back</a>";
 	}else{
-	    $mes="add address fail! please try again<br /><a href='app/order.php'>return back</a>";
+		$mes="don't change email<br /><a href='app/personal_center.php'>return back</a>";
 	}
 	return $mes;
-
 }
 //下订单
 function order($product_url){
 	$arr=$_POST;
-	$customer_id=$_SESSION['login_customer_id'];
-	$keys="`".join("`,`",array_keys($arr))."`";
-	$keys="`customer_id`,".$keys;
-	$vals="'".join("','",array_values($arr))."'";
-	$vals="'".$customer_id."',".$vals;
-	$sql="insert `xplender_order`($keys) values({$vals})";
-	echo $sql;
-	mysql_query($sql);
-	if(mysql_insert_id()){
-	    $mes="order success!<br /><a href='app/index.php'>go to index page</a>";
-	}else{
-		echo $product_url;
-	    $mes="order fail! please try again<br /><a href='app/{$product_url}'>return back product page</a>";
-	}
-	return $mes;
-}
-//添加购物车
-function cart(){
+	
 	$product_name=$_POST['product_name'];
-	$buy_number=$_POST['buy_number'];
-	$customer_id=$_SESSION['login_customer_id'];
+	$number=$_POST['order_number'];
 	$product_row=SCInformation("xplender_product","product_name='{$product_name}'");
-	$product_id=$product_row['product_id'];
-	$sql="insert `xplender_cart`(`customer_id`, `product_id`, `buy_number`) VALUES ('{$customer_id}','{$product_id}','{$buy_number}')";
-	mysql_query($sql);
-	if(mysql_affected_rows()){
-	    $mes="add cart success!<br /><a href='app/index.php'>go to index page</a> or <a href='app/cart.php'>buy this porduct</a>";
+	$product_url=$product_row['product_url'];
+	$customer_email=$_POST['customer_email'];
+	
+	//update地址
+	$address_arr=array_slice($arr,0,9);
+	//order地址
+	$order_arr=array_slice($arr,9,5);
+	$login_customer_email=@$_SESSION['login_customer_name'];
+	//判断是否登入
+	if($login_customer_email){
+		//修改地址
+		if(update("xplender_customer",$address_arr,"customer_email='{$customer_email}'")){
+			//修改地址成功，下订单
+			$customer_row=SCInformation("xplender_customer","customer_email='{$customer_email}'");
+			$order_arr['customer_id']=$customer_row['customer_id'];
+			$order_arr['order_time']=date(time());
+			if(insert("xplender_order",$order_arr)){
+				$mes="order success!<br /><a href='app/personal_center.php'>go to personal center page</a>";
+			}else{
+				$mes="order fail!<br /><a href='app/order.php?product={$product_url}&number={$number}'>order again</a>";
+			}
+		}else{
+			//失败
+			$mes="update address fail!<br /><a href='app/order.php?product={$product_url}&number={$number}'>order again</a>";
+		}
 	}else{
-	    $mes="add cart fail! please try again<br /><a href='app/product_detail.php?click_product_name={$product_name}'>return back</a>";
-	}
+		$sql="select * from `xplender_customer` where customer_email='{$customer_email}'";
+		$row=fetchOne($sql);
+		if($row){
+			//邮箱已注册
+			$mes="this email is register! you should log in to buy product<br /><a href='app/login.php?page=order.php&product={$product_url}&number={$number}'>log in</a>";
+		}else{
+			//添加用户
+		    $customer_password=md5("abcd1234");
+		    $address_arr['customer_password']=$customer_password;
+		    //判断邮箱
+		    if(filter_var($customer_email, FILTER_VALIDATE_EMAIL)){
+			    if(insert("xplender_customer",$address_arr)){
+			        //添加用户成功，下订单adadada
+					$order_arr['customer_id']=mysql_insert_id();
+					$order_arr['order_time']=date(time());
+                    if(insert("xplender_order",$order_arr)){
+				        $mes="order success!<br /><a href='app/personal_center.php'>go to personal center page</a>";
+			        }else{
+			        	$mes="order fail!<br /><a href='app/order.php?product={$product_url}&number={$number}'>order again</a>";
+			        }
+                }else{
+			        //失败
+                    $mes="add address fail<br /><a href='app/order.php?product={$product_url}&number={$number}'>order again</a>";
+                }
+		    }else{
+				$mes="add email fail!<br /><a href='app/order.php?product={$product_url}&number={$number}'>order again</a>";
+			}
+		}
+	}	
 	return $mes;
 }
+
 //收藏
 function collection($customer_id,$product_id){
 	if($customer_id){

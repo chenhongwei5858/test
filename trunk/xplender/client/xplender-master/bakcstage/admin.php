@@ -49,6 +49,7 @@ if($customer_email){
             <li><a href="#admin.php" class="active"><i class="fa fa-home fa-fw"></i>admin</a></li>
             <li><a href="customer.php"><i class="fa fa-bar-chart fa-fw"></i>customer list</a></li>
             <li><a href="subscribe.php"><i class="fa fa-users fa-fwi"></i>Subscribe list</a></li>
+			<li><a href="order.php"><i class="fa fa-users fa-fwi"></i>order list</a></li>
             <li><a href="../doAction.php?act=logout">log out</a></li>			
           </ul>  
         </nav>

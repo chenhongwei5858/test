@@ -1,6 +1,6 @@
 <?php
 require_once '../include.php';
-
+@$customer_email=$_SESSION['login_customer_name'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,6 +35,7 @@ require_once '../include.php';
 					   echo "<button type='submit' class='login_btn'>Login</button>";
 				       echo "</form>";
 					 }else{
+					   echo "<a href='personal_center.php' style='color:#ffffff;'>Greetings,{$customer_email}</a> ";
 					   echo "<a href='../doAction.php?act=customerLogout' style='color:#ffffff;'>log out</a>";
 					 }
 				   ?>

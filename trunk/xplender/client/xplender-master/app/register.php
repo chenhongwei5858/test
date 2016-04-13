@@ -1,3 +1,7 @@
+<?php
+require_once '../include.php';
+@$customer_email=$_SESSION['login_customer_name'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -26,14 +30,15 @@
 					<li>
 					   <?php
 					     if(@$_SESSION['login_customer_id']==""){
-						   echo "<form action='doCustomerLogin.php' method='post'>";
+						   echo "<form action='doCustomerLogin.php?page=register.php' method='post'>";
 					       // echo "<label class='' name='customer_name'>log in</label>";
 						   echo "<input class='login_text' type='text' id='customer_name' name='customer_email' placeholder='username' />";
 						   echo "<input class='login_text' type='password' id='password' name='customer_password' placeholder='password' />";
 						   echo "<button type='submit' class='login_btn'>Login</button>";
-					       echo "</form>";
+				    	   echo "</form>";
 						 }else{
-						   echo "<a href='../doAction.php?act=customerLogout'>log out</a>";
+						   echo "<a href='personal_center.php' style='color:#ffffff;'>Greetings,{$customer_email}</a> ";
+						   echo "<a href='../doAction.php?act=customerLogout' style='color:#ffffff;'>log out</a>";
 						 }
 					   ?>
 					 </li>
@@ -75,7 +80,7 @@
 						</div>
 						<div class="reg_sub">
 							<button class="register_btn" type='submit'>submit</button>
-							<a class="login_link" href="index.php">log in</a>
+							<a class="login_link" href="login.php">log in</a>
 						</div>
 					</form>
 				</div>

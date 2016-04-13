@@ -1,14 +1,14 @@
 <?php
 require_once '../include.php';
 checkLogined();
-$pageSize=5;
+$admin_id=$_SESSION['login_admin_id'];
+//每页显示行数
+$pageSize=100;
 $page=@$_REQUEST['page']?(int)$_REQUEST['page']:1;
-@$subscribe_email=$_REQUEST['subscribe_email'];
-if($subscribe_email){
-  $rows=getProductPage($page,$pageSize,"xplender_subscribe","subscribe_email='{$subscribe_email}'");
-}else{
-  $rows=getProductPage($page,$pageSize,"xplender_subscribe");
-}
+
+$rows=getProductPage($page,$pageSize,"xplender_order");
+
+
 ?>
 
 <!DOCTYPE html>
@@ -47,8 +47,8 @@ if($subscribe_email){
           <ul>
             <li><a href="admin.php" ><i class="fa fa-home fa-fw"></i>admin</a></li>
             <li><a href="customer.php"><i class="fa fa-bar-chart fa-fw"></i>customer list</a></li>
-            <li><a href="#subscribe.php"  class="active"><i class="fa fa-users fa-fwi"></i>Subscribe list</a></li>  
-			<li><a href="order.php"><i class="fa fa-users fa-fwi"></i>order list</a></li>
+            <li><a href="subscribe.php"><i class="fa fa-users fa-fwi"></i>Subscribe list</a></li>
+			<li><a href="#" class="active"><i class="fa fa-users fa-fwi"></i>order list</a></li>
             <li><a href="../doAction.php?act=logout">log out</a></li>			
           </ul>  
         </nav>
@@ -70,25 +70,54 @@ if($subscribe_email){
             
 			<div class="col-1">
               <div class="panel panel-default templatemo-content-widget white-bg no-padding templatemo-overflow-hidden">
-                <div class="panel-heading templatemo-position-relative"><h2 class="text-uppercase">Subscribe Table</h2></div>
+                <div class="panel-heading templatemo-position-relative"><h2 class="text-uppercase">Customer Table</h2></div>
                 <div class="table-responsive">
                   <table class="table table-striped table-bordered">
                     <thead>
                       <tr>
-                        <td>subscribe id</td>
-                        <td>email</td>
+					    <td>order id</td>
+						<td>order time</td>
+                        <td>customer email</td>
+                        <td>product id</td>
+						<td>product name</td>
+						<td>number</td>
+						<td>order status</td>
+						<!--<td>logistics company</td>
+	          			<td>logistics number</td>
+                        <td>logistics status</td>
+		        		<td>order status</td>
+                        <td>postage</td>
+						<td>total</td>
+                        <td>customer fullname</td>
+						<td>customer phone</td>
+						<td>order address</td>
+						<td>paypal</td>-->
                       </tr>
                     </thead>
                     <tbody>
                       <?php foreach($rows as $row): ?>
 						    <tr>
-								<td><?php echo $row['subscribe_id']; ?></td>
-								<td><?php echo $row['subscribe_email']; ?></td>
+								<td><?php echo "<a href='order_details.php?order_id={$row['order_id']}'>{$row['order_id']}</a>"; ?></td>
+								<td><?php 
+								    $time=date("Y-m-d H:i:s",$row['order_time']);
+						            echo $time; 
+								?></td>
+								<td><?php 
+								    $customer_row=SCInformation("xplender_customer","customer_id='{$row['customer_id']}'");
+								    echo $customer_row['customer_email']; 
+								?></td>
+								<td><?php 
+								    $product_row=SCInformation("xplender_product","product_name='{$row['product_name']}'");
+									echo $product_row['product_id']; 
+								?></td>
+								<td><?php echo $row['product_name']; ?></td>
+								<td><?php echo $row['order_number']; ?></td>
+                                <td><?php echo $row['order_status']; ?></td>
 							</tr>
 							<?php endforeach; ?>
 							<?php if($rows>$pageSize):?>
 							<tr>
-							    <td colspan="2" class="no-padding-right"><?php echo showPage($page,$totalPage);?></td>
+							    <td colspan="10" class="no-padding-right"><?php echo showPage($page,$totalPage);?></td>
 							</tr>
 							<?php endif;?>                   
                     </tbody>

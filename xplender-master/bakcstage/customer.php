@@ -2,7 +2,8 @@
 require_once '../include.php';
 checkLogined();
 $admin_id=$_SESSION['login_admin_id'];
-$pageSize=5;
+//每页显示行数
+$pageSize=100;
 $page=@$_REQUEST['page']?(int)$_REQUEST['page']:1;
 @$customer_email=$_REQUEST['customer_email'];
 if($customer_email){
@@ -10,6 +11,7 @@ if($customer_email){
 }else{
   $rows=getProductPage($page,$pageSize,"xplender_customer");
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -49,6 +51,7 @@ if($customer_email){
             <li><a href="admin.php" ><i class="fa fa-home fa-fw"></i>admin</a></li>
             <li><a href="#customer.php" class="active"><i class="fa fa-bar-chart fa-fw"></i>customer list</a></li>
             <li><a href="subscribe.php"><i class="fa fa-users fa-fwi"></i>Subscribe list</a></li>
+			<li><a href="order.php"><i class="fa fa-users fa-fwi"></i>order list</a></li>
             <li><a href="../doAction.php?act=logout">log out</a></li>			
           </ul>  
         </nav>
@@ -94,14 +97,18 @@ if($customer_email){
 								<td><?php echo $row['customer_id']; ?></td>
 								<td><?php echo $row['customer_email']; ?></td>
 								<td><?php echo $row['customer_offers']; ?></td>
-								<td><?php echo $row['customer_fullName']; ?></td>
-								<td><?php echo $row['customer_phone']; ?></td>
-								<td><?php echo $row['customer_addressLineOne']; ?></td>
-								<td><?php echo $row['customer_addressLineTwo']; ?></td>
-								<td><?php echo $row['customer_city']; ?></td>
-								<td><?php echo $row['customer_StateProvinceRegion']; ?></td>
-								<td><?php echo $row['customer_zip']; ?></td>
-								<td><?php echo $row['customer_country']; ?></td>
+								<?php 
+								    //默认显示第一地址
+								    $address_row=SCInformation("xplender_address","customer_id={$row['customer_id']} and address_index='1'");
+									echo "<td>{$address_row['customer_fullName']}</td>";
+									echo "<td>{$address_row['customer_phone']}</td>";
+									echo "<td>{$address_row['customer_caddress']}</td>";
+									echo "<td>{$address_row['customer_paddress']}</td>";
+									echo "<td>{$address_row['customer_city']}</td>";
+									echo "<td>{$address_row['customer_state']}</td>";
+									echo "<td>{$address_row['customer_zip']}</td>";
+									echo "<td>{$address_row['customer_country']}</td>";
+								?>
 							</tr>
 							<?php endforeach; ?>
 							<?php if($rows>$pageSize):?>

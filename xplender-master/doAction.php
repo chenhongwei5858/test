@@ -12,10 +12,10 @@ if($act=="logout"){
   $mes=signup($source);
 }elseif($act=="register"){
   $mes=register();
-}elseif($act=="address"){
-  $mes=address();
 }elseif($act=="order"){
   $mes=order($product_url);
+}elseif($act=="updateAddress"){
+  $mes=updateAddress();
 }
 ?>
 <!DOCTYPE html>

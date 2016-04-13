@@ -1,3 +1,8 @@
+<?php
+require_once '../include.php';
+@$customer_email=$_SESSION['login_customer_name'];
+$page=@$_REQUEST['page']?$_REQUEST['page']:"index.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -7,7 +12,7 @@
 
 	<body>
 	   <div class="register">
-	   	<form action="doCustomerLogin.php?page=<?php echo $_REQUEST['page'];?>" method="post" >
+	   	<form action="doCustomerLogin.php?page=<?php echo $page;?>" method="post" >
 	   	  <div class="register_input">
 	   	  	  <div style="margin-bottom:30px;">
 			    <label name="email">email</label>

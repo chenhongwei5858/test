@@ -2,7 +2,8 @@
 require_once '../include.php';
 checkLogined();
 $pageSize=5;
-$page=@$_REQUEST['page']?(int)$_REQUEST['page']:1;
+$page=@$_REQUEST['page_index']?(int)$_REQUEST['page_index']:1;
+$index_name="page_index";
 @$subscribe_email=$_REQUEST['subscribe_email'];
 if($subscribe_email){
   $rows=getProductPage($page,$pageSize,"xplender_subscribe","subscribe_email='{$subscribe_email}'");
@@ -47,7 +48,8 @@ if($subscribe_email){
           <ul>
             <li><a href="admin.php" ><i class="fa fa-home fa-fw"></i>admin</a></li>
             <li><a href="customer.php"><i class="fa fa-bar-chart fa-fw"></i>customer list</a></li>
-            <li><a href="#subscribe.php"  class="active"><i class="fa fa-users fa-fwi"></i>Subscribe list</a></li>  
+            <li><a href="#subscribe.php"  class="active"><i class="fa fa-users fa-fwi"></i>Subscribe list</a></li>
+			<li><a href="product.php"><i class="fa fa-users fa-fwi"></i>product list</a></li>
 			<li><a href="order.php"><i class="fa fa-users fa-fwi"></i>order list</a></li>
             <li><a href="../doAction.php?act=logout">log out</a></li>			
           </ul>  
@@ -88,7 +90,7 @@ if($subscribe_email){
 							<?php endforeach; ?>
 							<?php if($rows>$pageSize):?>
 							<tr>
-							    <td colspan="2" class="no-padding-right"><?php echo showPage($page,$totalPage);?></td>
+							    <td colspan="2" class="no-padding-right"><?php echo showPage($index_name,$page,$totalPage);?></td>
 							</tr>
 							<?php endif;?>                   
                     </tbody>

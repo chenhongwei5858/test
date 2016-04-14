@@ -113,3 +113,4 @@ function collection($customer_id,$product_id){
 		echo "<span class='collection'>collection</span>";
 	}
 }
+

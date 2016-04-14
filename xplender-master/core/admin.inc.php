@@ -39,7 +39,28 @@ function getProductPage($page,$pageSize=2,$table,$where=null){
   $rows=fetchAll($sql);
   return $rows;
 }
-
+//更新order
+function updateOrder($order_id){
+	$arr=$_POST;
+	array_splice($arr,0,2);
+	
+	$customer_email=$_POST['customer_email'];
+	$customer_row=SCInformation("xplender_customer","customer_email='{$customer_email}'");
+	$customer_id=$customer_row['customer_id'];
+	
+	$product_id=$_POST['product_id'];
+	$product_row=SCInformation("xplender_product","product_id='{$product_id}'");
+	$product_name=$product_row['product_name'];
+	
+	$arr['customer_id']=$customer_id;
+	$arr['product_name']=$product_name;
+	if(update("xplender_order",$arr,"order_id={$order_id}")){
+        $mes="update success！<br /><a href='bakcstage/order.php'>return order page</a>";
+    }else{
+        $mes="update fail！<br /><a href='bakcstage/order_details?order_id={$order_id}.php'>return edit page</a>";
+    }
+    return $mes;
+}
 
 
 
